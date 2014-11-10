@@ -6,12 +6,12 @@
 <meta name="robots" content="all" />
 <meta name="author" content="w3school.com.cn" />
 
-<title>小学数学</title>
+<title>小学数学，这里能输入中文诶</title>
 <style type="text/css">
 div#container{width:500px}
 div#header {background-color:#99bbbb;}
-div#menu {background-color:#ffff99;height:200px;width:150px;float:left;}
-div#content {background-color:#EEEEEE;height:200px;width:350px;float:right;}
+div#calc_area {background-color:#ffff99;height:200px;width:150px;float:left;}
+div#res_area{background-color:#EEEEEE;height:200px;width:350px;float:right;}
 div#keypad {background-color:#FFEEEE;height:400px;width:500px;}
 div#footer {background-color:#99bbbb;clear:both;text-align:center;}
 h1 {margin-bottom:0;}
@@ -19,37 +19,79 @@ h2 {margin-bottom:0;font-size:18px;}
 ul {margin:0;}
 li {list-style:none;}
 </style>
-<script src="mercury/javascripts/mercury_loader.js" type="text/javascript"></script>
+
+<script src="/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/js/jquery_func.js"></script>
+<script TYPE="text/javascript">
+var scrsize;
+var conSize;
+function load()
+{
+}
+function getSCRSize()
+{
+    var scrH = screen.availHeight;
+    var scrW = screen.availWidth;
+    return {
+        width:  scrW,
+        height: scrH
+    }
+}
+scrsize = getSCRSize();
+conSize = ( ( scrsize["width"] > scrsize["height"] ) ? scrsize ["height"] : scrsize ["width"] );
+$(document).ready(function(){
+        $("div#container").css( "width",   conSize + "px" );
+        $("div#container").css( "height",  conSize + "px" );
+        $("div#calc_area").css( "width",   "500px" );
+        $("div#res_area").css(  "width",   "500px" );
+        $("div#keypad").css(    "width",   conSize + "px" );
+
+        $("#test").text( "test: " + scrsize["width"] + "×" + scrsize["height"]);
+        });
+
+function testShow()
+{
+    var scr = getSCRSize();
+    document.write("test window obj.");
+    document.write("<p>Available Height of screen: " + scr["height"] + "</p>");
+    document.write("<p>Available Width of screen: " + scr["width"] + "</p>");
+}
+</script>
+
 </head>
 
-<body>
+<body onload="">
+
 <div id="container">
 
 <div id="header">
-<h1>Main Title of Web Page</h1>
+<h1>一年级加法</h1>
 </div>
 
-<div id="menu">
-<h2>Menu</h2>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-</ul>
+<div id="calc_area">
+
+<!-- <button onclick="testShow()">点击这里</button> -->
+
+
 </div>
 
-<div id="content">Content goes here</div>
+<div id="res_area">
 
-<div id="keypad">Keys put here</div>
+<p>结果写在这里。</p>
 
-<div id="footer">Copyright W3School.com.cn</div>
+<P id="test">test put here.</P>
 
-<div data-mercury="full" id="noid">
-Your editable content will be here...
 </div>
+
+<div id="keypad">这里放置键盘。</div>
+
+<div id="footer">Copyright Schoola Maths</div>
 
 </div>
 
 </body>
+
+<script type="text/javascript">
+</script>
 
 </html>
