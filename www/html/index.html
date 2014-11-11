@@ -6,14 +6,39 @@
 <meta name="robots" content="all" />
 <meta name="author" content="w3school.com.cn" />
 
-<title>小学数学，这里能输入中文</title>
+<title>小学数学</title>
 <style type="text/css">
-div#container{width:500px}
-div#header {background-color:#99bbbb;}
-div#calc_area {background-color:#ffff99;height:200px;width:150px;float:left;}
-div#res_area{background-color:#EEEEEE;height:200px;width:350px;float:right;}
-div#keypad {background-color:#FFEEEE;height:400px;width:500px;}
-div#footer {background-color:#99bbbb;clear:both;text-align:center;}
+div#container {
+    width:500px
+    }
+div#header {
+    background-color:#99bbbb;
+    width:500px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    }
+div#calc_area {
+    background-color:#ffff99;
+    height:200px;
+    width:150px;
+    }
+div#res_area {
+    background-color:#EEEEEE;
+    height:200px;
+    width:350px;
+    float:right;
+    }
+div#keypad {
+    background-color:#FFEEEE;
+    height:400px;
+    width:500px;
+    }
+div#footer {
+    background-color:#99bbbb;
+    clear:both;
+    text-align:center;
+    }
 h1 {margin-bottom:0;}
 h2 {margin-bottom:0;font-size:18px;}
 ul {margin:0;}
@@ -42,6 +67,7 @@ conSize = ( ( scrsize["width"] > scrsize["height"] ) ? scrsize ["height"] : scrs
 $(document).ready(function(){
         $("div#container").css( "width",   conSize + "px" );
         $("div#container").css( "height",  conSize + "px" );
+        $("div#header").css(    "width",   conSize + "px" );
         $("div#calc_area").css( "width",   "500px" );
         $("div#res_area").css(  "width",   "500px" );
         $("div#keypad").css(    "width",   conSize + "px" );
