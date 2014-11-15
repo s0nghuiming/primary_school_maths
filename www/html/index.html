@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-cn">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html" charset="GB2312" />
 <meta name="robots" content="all" />
 <meta name="author" content="w3school.com.cn" />
 
@@ -79,40 +79,44 @@ function testShow()
 {
     var scr = getSCRSize();
     document.write("test window obj.");
-    document.write("<p>Available Height of screen: " + scr["height"] + "</p>");
-    document.write("<p>Available Width of screen: " + scr["width"] + "</p>");
+    document.write("<P>Available Height of screen: " + scr["height"] + "</P>");
+    document.write("<P>Available Width of screen: " + scr["width"] + "</P>");
 }
 </script>
 
-</head>
+</HEAD>
 
-<body onload="">
+<BODY onload="">
 
-<div id="container">
+<DIV id="container">
 
-<div id="header">
-<h1>一年级加法</h1>
-</div>
+<DIV id="header">
+<H1>一年级加法</H1>
+</DIV>
 
-<div id="calc_area">
+<DIV id="calc_area">
 <P>这里写算式</P>
 <!-- <button onclick="testShow()">点击这里</button> -->
 
-</div>
+</DIV>
 
-<div id="res_area">
+<DIV id="res_area">
 
-<p>结果写在这里。</p>
+<P>结果写在这里。</P>
 
 <P id="test">test put here.</P>
 
-</div>
+</DIV>
 
-<div id="keypad">这里放置键盘。</div>
+<DIV id="keypad">
 
-<div id="footer">Copyright Schoola Maths</div>
+<P>这里放置键盘。</P>
 
-</div>
+</DIV>
+
+<DIV id="footer">Copyright Schoola Maths</DIV>
+
+</DIV>
 
 </body>
 
