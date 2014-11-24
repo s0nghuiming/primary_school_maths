@@ -8,6 +8,10 @@
 
 <title>小学数学</title>
 <style type="text/css">
+body {
+    margin:0;
+    padding:0;
+    }
 DIV#container {
     width:500px
     }
@@ -23,20 +27,14 @@ DIV#area {
     }
 DIV#calc_area {
     background-color:#ffff99;
-    height: 200px;
-    width:  150px;
     margin: 0px
     }
 DIV#res_area {
     background-color:#EEEEEE;
-    height:200px;
-    width:350px;
     margin: 0px
     }
 DIV#keypad_area {
     background-color:#FFEEEE;
-    height:400px;
-    width:500px;
     margin: 0px
     }
 DIV#footer {
@@ -69,12 +67,10 @@ function getSCRSize()
 scrsize = getSCRSize();
 conSize = ( ( scrsize["width"] > scrsize["height"] ) ? scrsize ["height"] : scrsize ["width"] );
 $(document).ready(function(){
-        $("DIV#container").css(
-            "width",    conSize + "px"
-            );
-        $("DIV#container").css(
-            "height",   conSize + "px"
-            );
+        $("DIV#container").css( {
+            "width":    conSize + "px",
+            "height":   conSize + "px",
+            } );
         $("DIV#header").css(
             "width",    conSize + "px"
             );
@@ -82,16 +78,17 @@ $(document).ready(function(){
             "width",    conSize + "px"
             );
         $("DIV#calc_area").css( {
-            "width":"50%",
-            "float":"left",
+            "width":    "50%",
+            "height":   "50%",
+            "float":    "left",
             } );
         $("DIV#res_area").css( {
-            "width":"50%",
-            "float":"left",
+            "width":    "50%",
+            "float":    "left",
             } );
         $("DIV#keypad_area").css( {
-            "width":conSize + "px",
-            "float":"left",
+            "width":    conSize + "px",
+            "float":    "left",
             } );
 
         $("#test").text( "区域大小: " + scrsize["width"] + "×" + scrsize["height"]);
