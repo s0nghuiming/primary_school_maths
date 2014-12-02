@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<html>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html" charset="GB2312" />
+<meta name="robots" content="all" />
+<meta name="author" content="w3school.com.cn" />
+
+<title>小学数学</title>
+<style type="text/css">
+body {
+    margin:0;
+    padding:0;
+    }
+DIV#container {
+    width:500px
+    }
+DIV#header {
+    background-color:#99bbbb;
+    width:500px;
+    left:0px;
+    top:0px;
+    }
+DIV#area {
+    width:  500px
+    margin: 0px
+    }
+DIV#calc_area {
+    background-color:#ffff99;
+    margin: 0px
+    }
+DIV#res_area {
+    background-color:#EEEEEE;
+    margin: 0px
+    }
+DIV#keypad_area {
+    background-color:#FFEEEE;
+    margin: 0px
+    }
+DIV#footer {
+    background-color:#99bbbb;
+    clear:both;
+    text-align:center;
+    }
+h1 {margin-bottom:0;}
+h2 {margin-bottom:0;font-size:18px;}
+ul {margin:0;}
+li {list-style:none;}
+</style>
+
+<script src="/js/jquery-1.9.0.js"></script>
+<script TYPE="text/javascript">
+var scrsize;
+var conSize;
+function load()
+{
+}
+function getSCRSize()
+{
+    var scrH = screen.availHeight;
+    var scrW = screen.availWidth;
+    return {
+        width:  scrW,
+        height: scrH
+    }
+}
+scrsize = getSCRSize();
+conSize = ( ( scrsize["width"] > scrsize["height"] ) ? scrsize ["height"] : scrsize ["width"] );
+$(document).ready(function(){
+        $("DIV#container").css( {
+            "width":    conSize + "px",
+            "height":   conSize + "px",
+            } );
+        $("DIV#header").css(
+            "width",    conSize + "px"
+            "height",   "10%",
+            );
+        $("DIV#area").css( {
+            "width":    conSize + "px",
+            } );
+        $("DIV#calc_area").css( {
+            "width":    "50%",
+            "float":    "left",
+            } );
+        $("DIV#res_area").css( {
+            "width":    "50%",
+            "float":    "left",
+            } );
+        $("DIV#keypad_area").css( {
+            "width":    conSize + "px",
+            "float":    "left",
+            } );
+        $("DIV#footer").css( {
+            "width":    conSize + "px",
+            "height":   "10%",
+            } );
+
+        $("#test").text( "区域大小: " + scrsize["width"] + "×" + scrsize["height"]);
+        $("#test").text( "container区域大小: " + conSize + "×" + conSize);
+        });
+
+function testShow()
+{
+    var scr = getSCRSize();
+    document.write("test window obj.");
+    document.write("<P>Available Height of screen: " + scr["height"] + "</P>");
+    document.write("<P>Available Width of screen: " + scr["width"] + "</P>");
+}
+</script>
+
+</HEAD>
+
+<BODY onload="">
+
+<DIV id="container">
+
+<DIV id="header">
+<h1>一年级加法</h1>
+</DIV>
+
+<div id="area">
+
+<DIV id="calc_area">
+<P>这里写算式</P>
+<!-- <button onclick="testShow()">点击这里</button> -->
+
+</DIV>
+
+<DIV id="res_area">
+
+<P>结果写在这里。</P>
+
+<P id="test">test put here.</P>
+
+</DIV>
+
+<DIV id="keypad_area">
+
+<P>这里放置键盘。</P>
+
+</DIV>
+
+</div>
+
+<DIV id="footer">Copyright Schoola Maths</DIV>
+
+</DIV>
+
+</body>
+
+<script type="text/javascript">
+</script>
+
+</html>
